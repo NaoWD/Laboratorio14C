@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laboratorio14C.MainPage">
+
+    <StackLayout>
+        <Entry Placeholder="Nombre" x:Name="txtName" HorizontalOptions="FillAndExpand"/>
+        <Entry Placeholder="Descripción" x:Name="txtDescription" HorizontalOptions="FillAndExpand"/>
+        <Entry Placeholder="Precio" x:Name="txtPrecio" HorizontalOptions="FillAndExpand"/>
+        <Entry Placeholder="Fecha de Vencimiento" x:Name="txtFechaVencimiento" HorizontalOptions="FillAndExpand"/>
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Save" Clicked="Button_Clicked"/>
+            <Button Text="Show" Clicked="Button_Clicked_1"/>
+
+        </StackLayout>
+        <Entry Placeholder="Filter" x:Name="txtFilter" HorizontalOptions="FillAndExpand"/>
+        <Button Text="ShowByText" Clicked="Button_Clicked_2"/>
+
+        <ListView x:Name="lvProduct">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding name}"></Label>
+                            <Label Text="{Binding description}"></Label>
+                            <Label Text="{Binding precio}"></Label>
+                            <Label Text="{Binding fechaVencimiento}"></Label>
+                        </StackLayout>
+
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
